@@ -1,3 +1,4 @@
+import java.util.*;
 class Participant {
     private String Name;
     private String handle;
@@ -48,10 +49,29 @@ class Registration{
 }
 public class CP_Platform_System {
     public static void main(String[] a){
-     Contest c = new Contest("Codeforce", "18/06/2025");
-     Participant p = new Participant("Rijwan", "rijwan01");
-     Registration r = new Registration(p, c, 5);
+        Scanner sc = new Scanner(System.in);
+        String title,date,name,handle;
+        int n,no;
+        ArrayList<Registration>pr=new ArrayList<Registration>();
+        no=sc.nextInt(); sc.nextLine();
+        for(int i=0;i<no;i++){
+            title=sc.nextLine(); 
+            date=sc.nextLine();
+            Contest c = new Contest(title, date);
 
-     r.display();
+            name=sc.nextLine(); 
+            handle=sc.nextLine();
+            Participant p = new Participant(name, handle);
+
+            n=sc.nextInt();
+            sc.nextLine();
+            Registration r = new Registration(p, c, n);
+            pr.add(r);
+        }
+
+        for(int i=0; i<pr.size(); i++){
+            pr.get(i).display();
+        }
+      sc.close();
     }
 }
