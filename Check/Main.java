@@ -1,3 +1,4 @@
+//Department
 import java.util.ArrayList;
 
 class Course{
@@ -77,7 +78,6 @@ public class Main{
     cse.addProf(sah);
     cse.addProf(tar);
     swe.addProf(bcd);
-
     swe.addProf(sah);
 
     sah.addCourse(oop);
